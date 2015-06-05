@@ -1,0 +1,347 @@
+\documentclass[12pt,a4paper]{article}
+
+\setlength{\textwidth}{165mm}
+\setlength{\textheight}{240mm}
+\setlength{\parindent}{0mm} % S{\aa} meget rykkes ind efter afsnit
+\setlength{\parskip}{\parsep}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\hoffset}{-2.5mm}
+\setlength{\voffset}{0mm}
+\setlength{\footskip}{15mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+
+
+
+\usepackage[all]{xy}
+\usepackage{graphicx}    % For grafik (billederfiler)
+\usepackage[T1]{fontenc} % For at blande \textsc{} med \textbf{}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{eucal}
+\usepackage[danish]{babel}
+\usepackage{enumerate}  
+%\pagestyle{empty}
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{keystroke/keystroke}
+\usepackage{esvect}
+
+%\usepackage{scalefnt}
+
+%\pagestyle{plain}
+%\renewcommand\thepage{}
+%\renewcommand\thepage{\scalefont{1.25}\arabic{page}}
+
+%\usepackage{pslatex}
+\usepackage{mathptmx}
+%\usepackage{txfonts}
+%\usepackage{txgreeks}
+%\usepackage{mathpazo}
+
+\usepackage{multirow}
+\usepackage{xcolor}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+%\usepackage[dvipsnames,usenames]{color}
+%\usepackage{tabularx,colortbl}
+\definecolor{KU-red}{RGB}{144,26,30} 
+
+\DeclareSymbolFont{usualmathcal}{OMS}{cmsy}{m}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{usualmathcal}
+
+
+\DeclareSymbolFont{letters}{OML}{txmi}{m}{it}
+
+\DeclareMathSymbol{\alpha}{\mathord}{letters}{"0B}
+\DeclareMathSymbol{\beta}{\mathord}{letters}{"0C}
+\DeclareMathSymbol{\gamma}{\mathord}{letters}{"0D}
+\DeclareMathSymbol{\delta}{\mathord}{letters}{"0E}
+\DeclareMathSymbol{\epsilon}{\mathord}{letters}{"0F}
+\DeclareMathSymbol{\zeta}{\mathord}{letters}{"10}
+\DeclareMathSymbol{\eta}{\mathord}{letters}{"11}
+\DeclareMathSymbol{\theta}{\mathord}{letters}{"12}
+\DeclareMathSymbol{\iota}{\mathord}{letters}{"13}
+\DeclareMathSymbol{\kappa}{\mathord}{letters}{"14}
+\DeclareMathSymbol{\lambda}{\mathord}{letters}{"15}
+\DeclareMathSymbol{\mu}{\mathord}{letters}{"16}
+\DeclareMathSymbol{\nu}{\mathord}{letters}{"17}
+\DeclareMathSymbol{\xi}{\mathord}{letters}{"18}
+\DeclareMathSymbol{\pi}{\mathord}{letters}{"19}
+\DeclareMathSymbol{\rho}{\mathord}{letters}{"1A}
+\DeclareMathSymbol{\sigma}{\mathord}{letters}{"1B}
+\DeclareMathSymbol{\tau}{\mathord}{letters}{"1C}
+\DeclareMathSymbol{\upsilon}{\mathord}{letters}{"1D}
+\DeclareMathSymbol{\phi}{\mathord}{letters}{"1E}
+\DeclareMathSymbol{\chi}{\mathord}{letters}{"1F}
+\DeclareMathSymbol{\psi}{\mathord}{letters}{"20}
+\DeclareMathSymbol{\omega}{\mathord}{letters}{"21}
+\DeclareMathSymbol{\varepsilon}{\mathord}{letters}{"22}
+\DeclareMathSymbol{\vartheta}{\mathord}{letters}{"23}
+\DeclareMathSymbol{\varpi}{\mathord}{letters}{"24}
+\DeclareMathSymbol{\varrho}{\mathord}{letters}{"25}
+\DeclareMathSymbol{\varsigma}{\mathord}{letters}{"26}
+\DeclareMathSymbol{\varphi}{\mathord}{letters}{"27}
+
+\DeclareMathSymbol{\Gamma}{\mathord}{letters}{"00}
+\DeclareMathSymbol{\Delta}{\mathord}{letters}{"01}
+\DeclareMathSymbol{\Theta}{\mathord}{letters}{"02}
+\DeclareMathSymbol{\Lambda}{\mathord}{letters}{"03}
+\DeclareMathSymbol{\Xi}{\mathord}{letters}{"04}
+\DeclareMathSymbol{\Pi}{\mathord}{letters}{"05}
+\DeclareMathSymbol{\Sigma}{\mathord}{letters}{"06}
+\DeclareMathSymbol{\Upsilon}{\mathord}{letters}{"07}
+\DeclareMathSymbol{\Phi}{\mathord}{letters}{"08}
+\DeclareMathSymbol{\Psi}{\mathord}{letters}{"09}
+\DeclareMathSymbol{\Omega}{\mathord}{letters}{"0A}
+
+\DeclareMathSymbol{\upGamma}{\mathalpha}{operators}{"00}
+\DeclareMathSymbol{\upDelta}{\mathalpha}{operators}{"01}
+\DeclareMathSymbol{\upTheta}{\mathalpha}{operators}{"02}
+\DeclareMathSymbol{\upLambda}{\mathalpha}{operators}{"03}
+\DeclareMathSymbol{\upXi}{\mathalpha}{operators}{"04}
+\DeclareMathSymbol{\upPi}{\mathalpha}{operators}{"05}
+\DeclareMathSymbol{\upSigma}{\mathalpha}{operators}{"06}
+\DeclareMathSymbol{\upUpsilon}{\mathalpha}{operators}{"07}
+\DeclareMathSymbol{\upPhi}{\mathalpha}{operators}{"08}
+\DeclareMathSymbol{\upPsi}{\mathalpha}{operators}{"09}
+\DeclareMathSymbol{\upOmega}{\mathalpha}{operators}{"0A}
+
+%$\alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \vartheta \iota \kappa \lambda \mu \nu o \pi \varpi \rho \varrho \sigma \varsigma \tau \upsilon \phi \varphi \chi \psi \omega$
+
+%$\Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omega$
+
+%$\upGamma \upDelta \upTheta \upLambda \upXi \upPi \upSigma \upUpsilon \upPhi \upPsi \upOmega$
+
+
+
+\newcommand{\hhemail}[1]{\textsf{#1}}
+\newcommand{\hhurl}[1]{{\color{blue}\url{#1}}}
+
+\begin{document}
+
+\begin{minipage}[b]{1.0\linewidth} 
+
+
+\vspace*{-16ex}
+\begin{center}
+    {\Large \bf LinAlgDat} \vspace*{1ex} \\
+    {\large 2014/2015} \vspace*{1ex} \\
+    {\large Projekt B}
+\end{center}
+
+\vspace*{-3pt}
+\hrule
+\end{minipage}
+\vspace{5ex}
+
+\newpage
+
+
+{\bf Opgave 1 \ }
+
+Det oplyses, at den reducerede rækkeechelonform for $\mathbf{A}$ er 
+\begin{displaymath}
+  \mathbf{A}^* \,=\,
+    \left(\!\!
+    \begin{array}{rrrr}
+      1 & 0 & 1 &  1 \\
+      0 & 1 & 1 & -1 \\  
+      0 & 0 & 0 &  0 \\
+      0 & 0 & 0 &  0  
+    \end{array}
+    \!\!\right).
+\end{displaymath}
+
+\begin{enumerate}[(a)]
+
+\item Da vi kender den reducerede rækkeechelonform for \textbf{A}  kan vi let udregne \textbf{A} $\operatorname{null}\mspace{1mu}\mathbf{A}$ ved at finde løsningssættet for ligningen.
+
+\[
+	\begin{bmatrix}
+	x_1\\x_2\\x_3\\x_4
+	\end{bmatrix} =
+	x_3 
+	\begin{bmatrix}
+	-1 \\ -1 \\ 1 \\ 0
+	\end{bmatrix}
+	+ x4
+	\begin{bmatrix}
+	-1 \\ 1 \\ 0 \\ 1
+	\end{bmatrix}	
+\]
+
+vi ser at det er en lineær transformation så det kan omskrives til 
+
+\[null \textbf{A} = span
+	\left( \begin{bmatrix}
+	-1 \\ -1 \\ 1 \\ 0
+	\end{bmatrix},
+	\begin{bmatrix}
+	-1 \\ 1 \\ 0 \\ 1
+	\end{bmatrix} \right )	
+\] 
+
+\item En basis for søjlerummet $\operatorname{col}\mspace{1mu}\mathbf{A}$ er blot pivot rækkerne i den originale matrix \textbf{A}.
+
+\[ \operatorname{col}\mspace{1mu}\mathbf{A} =
+\left\{ 
+\begin{bmatrix}
+	-2 \\ 0 \\ -1 \\ -3
+\end{bmatrix} ,
+\begin{bmatrix}
+	1 \\ 1 \\ -1 \\ 3
+\end{bmatrix}
+\right\}
+\] 
+
+\setcounter{enumi}{2}
+
+\item Bestem dimensionerne af underrummene $\operatorname{ker}\mspace{1mu}T$ (kernen af $T$) og $\operatorname{ran}\mspace{1mu}
+T$ (billedet af $T$). \\
+
+$dim(ker \text{ } T) = dim( null(A) ) = 2. \rightarrow \text{ fordi der er 2 elementer i basisen for } null(A)$
+
+$dim(ran \text{ } T) = dim(col A) = rank A = 2 \rightarrow \text{ fordi, der er 2 pivot søjler i } A $.
+
+
+\end{enumerate}
+
+
+
+{\bf Opgave 4 \ }
+
+Se kode i "src"
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%Denne opgave omhandler \emph{additiv farveblanding}, som er frembringelsen af en lysfarve ud fra en blanding af andre farver lys. 
+%
+%Farver som vises på en tv- eller computerskærm er typisk blandet ud fra primærfarverne rød, grøn og blå (det såkaldte RGB farvesystem). Hver af disse tre lysfarver kan tildeles en intensitet mellem $0$ (som svarer til at lyset er slukket) og $1$ (som svarer til at lyset er for fuld styrke). Ved at kombinere forskellige intensiteter af farverne rød, grøn og blå kan man blande andre farver, fx:
+%\begin{center}
+%  \begin{tabular}{|c||c|c|c|}
+%     \hline
+%     {\bf Blandingsfarve} & {\bf Intensitet for rød} & {\bf Intensitet for grøn} & {\bf Intensitet for blå} \\ 
+%    \hline \hline
+%    \textcolor[rgb]{1,0,0}{rød}\textcolor[rgb]{0.5,0,0}{mørkerød}  & 1 & 0 & 0 \\
+%   \hline
+%    \textcolor[rgb]{0,1,0}{grøn}\textcolor[rgb]{0,0.5,0}{mørkegrøn}  & 0 & 1 & 0 \\
+%   \hline
+%    \textcolor[rgb]{0,0,1}{blå}\textcolor[rgb]{0,0,0.5}{mørkeblå}  & 0 & 0 & 1 \\
+%   \hline
+%    \textcolor[rgb]{1,1,0}{gul}  & 1 & 1 & 0 \\
+%   \hline
+%    \textcolor[rgb]{1,0,1}{magenta}  & 1 & 0 & 1 \\
+%   \hline
+%    \textcolor[rgb]{0,1,1}{cyan}  & 0 & 1 & 1 \\
+%   \hline
+%    \textcolor[rgb]{0.75,0.5,0.25}{brun}  &  &  &  \\
+%   \hline
+%    \textcolor[rgb]{0,0,0}{sort}  & 0 & 0 & 0 \\
+%   \hline
+%    \textcolor[rgb]{0.8,0.8,0.8}{hvid}  & 1 & 1 & 1 \\
+%   \hline
+%    \textcolor[rgb]{0.5,0,0.5}{lilla}  & 0.5 & 0 & 0.5 \\
+%   \hline
+%   \textcolor[rgb]{0.3,0,0.5}{indigo}  & 0.3 & 0 & 0.5 \\
+%   \hline
+%   \textcolor[rgb]{1,0.75,0.8}{pink}  & 1 & 0.75 & 0.8 \\
+%   \hline
+%   \textcolor[rgb]{1,0.5,0}{orange}  & 1 & 0.5 & 0 \\
+%   \hline
+%  \end{tabular}
+%\end{center}
+%
+%Vi betegner med $x_1$, $x_2$ og $x_3$ intensiteten for hhv.~farven rød, grøn og blå
+%
+%Som primærfarver tager man
+%
+%RGB er et farveskema i hvilket primærfarvernes røde, grønne og blå lys kombineres på forskellige måder for at skabe andre farver. 
+%
+%
+%
+%Belyser man f.eks. et område med lyset fra de tre grundfarver: rød, grøn og blå, kan man opnå en hvid farve. Man kan opnå næsten alle øvrige farver ved at blande lys med disse tre grundfarver og variere styrken af hver enkelt farve. Additiv farveblanding bruges fx i tv- og computerskærme, hvor tripletterne danner billedpunkter med en farve ud fra dens 3 grundfarver.
+%
+%
+%
+%
+%som er den form for 
+%RGB bruges til at definere farver på computer- og fjernsynsskærme.
+%
+%
+%
+%. Lad $F$ være et ordnet tripel af tre farver, fx triplet af de såkaldte primærfarver $F = \{\text{rød}, \text{grøn}, \text{blå}\}$. Hver farve 
+%
+%
+%Ved at blande farverne i $F$ i forskellige forhold fremkommer andre farver, fx
+%\begin{enumerate}
+%\item[] Farven \textcolor[rgb]{0.5,0.5,0}{\emph{gul}} opnås ved at blande 
+%
+%\item[] Farven \textcolor[cmyk]{0,0.9,0.9,0}{\emph{gul}} opnås ved at blande 
+%\end{enumerate}
+%
+%
+%Ved en \emph{blanding} af farverne i $F$ forstås en vektor $(x_1,x_2,x_3) \in \mathbb{R}^3$ hvor $x_1,x_2,x_3 \geqslant 0$ og $x_1+x_2+x_3=1$.
+%
+%\begin{enumerate}
+%\item[] Farven \emph{gul} opnås ved at blande
+%\end{enumerate}
+%
+%\LaTeX-footnote......
+%
+%\begin{enumerate}[(a)]
+%
+%\item ...
+%
+%\end{enumerate}
+%
+%
+%
+%

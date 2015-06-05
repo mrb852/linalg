@@ -1,0 +1,239 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath} % flere matematikkommandoer
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+\usepackage[utf8]{inputenc} % æøå
+\usepackage[T1]{fontenc} % mere æøå
+\usepackage[danish]{babel} % orddeling
+\usepackage{verbatim} % så man kan skrive ren tekst
+\usepackage[all]{xy} % den sidste (avancerede) formel i dokumentet
+
+\begin{titlepage}
+
+\title{Projekt C}
+\author{Christian Hohlmann Enevoldsen, MRB852, Hold 2}
+\begin{document}
+\maketitle
+
+\end{titlepage}
+
+{\setlength{\parindent}{0 cm}
+
+\textbf{\large Opgave 1.}\\
+
+\textbf{a)}\\
+
+\[
+\textbf{u}_1 = \left ( \begin{matrix} 2 \\ 1 \\ -2 \\ 0 \end{matrix} \right), %u1
+\textbf{u}_2 = \left ( \begin{matrix} 2 \\ 0 \\ 2 \\ -1 \end{matrix} \right )\\\\%u2
+\]
+
+\[
+%Vis orthogonal
+\textbf{u}_1 \perp \textbf{u}_2 \text{ hvis }   \textbf{u}_1 \cdot \textbf{u}_2 = 0
+\]
+
+%beregning
+\begin{align*}
+\textbf{u}_1 \cdot \textbf{u}_2 &= 2 \cdot 2 + 1 \cdot 0  - 2 \cdot 2  - 1 \cdot 0 \\
+&= 4 - 4\\ 
+&= 0
+\end{align*}
+
+Da $u_3$ kan skrives som en lineær kombination af $u_1$ og $u_2$ er den ikke en del af basen for $\mathcal{U} $
+
+\[
+ \text{ergo er } span\{ \textbf{u}_1, \textbf{u}_2 \} \text{  en ortogonal basis for } \mathcal{U} 
+\]
+
+%Pv = projU(v)
+
+\textbf{b)}\\
+
+\begin{align*}
+A &= span \{  \mathcal{U} \} \\
+Pv = proj  \mathcal{U}_v &= {AA^T}_v \\
+Pv =
+\begin{bmatrix}
+2 & 2 \\ 1 & 0 \\ -2 & 2 \\ 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+2 & 1 & -2 & 0\\ 2 & 0 & 2 & -1
+\end{bmatrix}
+& = \begin{bmatrix}
+ 8 &  2 &  0 & -2\\
+ 2 &  1 & -2 &  0\\
+ 0 & -2 &  8 & -2\\
+-2 &  0 & -2 &  1
+\end{bmatrix}v\\
+\leftrightarrow P &= \begin{bmatrix}
+ 8 &  2 &  0 & -2\\
+ 2 &  1 & -2 &  0\\
+ 0 & -2 &  8 & -2\\
+-2 &  0 & -2 &  1
+\end{bmatrix}
+\end{align*}
+
+\textbf{c)}\\
+\begin{align*}
+Pv &=
+\begin{bmatrix}
+ 8 &  2 &  0 & -2\\
+ 2 &  1 & -2 &  0\\
+ 0 & -2 &  8 & -2\\
+-2 &  0 & -2 &  1
+\end{bmatrix} 
+\begin{bmatrix}
+0 \\9 \\ 0\\9
+\end{bmatrix} = 
+\begin{bmatrix}
+0 \\ 9 \\-36 \\9
+\end{bmatrix}
+\end{align*}
+
+\textbf{d)}\\
+
+Vi betragter underrummet $\{ \mathcal{U} \} = \{\textbf{u}_1, \textbf{u}_2, \textbf{u}_3\}$\\
+
+Lad $ \textbf{A} = span(\mathcal{\{U}\})$ \\
+
+Vi ved at $ \mathcal{U}^\perp  = null(\textbf{A}^T)$\\
+
+Vi beregner nu $null (\textbf{A})$
+
+\begin{align*} 
+\begin{bmatrix}
+2 & 2 & 4\\ 1 & 0 & 1 \\ -2 & 2 & 0 \\ 0 & -1 & -1
+\end{bmatrix} 
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix} &= 
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\0
+\end{bmatrix}\\
+&\updownarrow \\
+2x_1 + 2x_2 + 4x_3 &= 0 \\ 
+x_1 + x_3 &= 0\\
+ -2x_1 + 2x_2 &= 0\\ 
+-x_2  -x_3 &= 0\\
+&\updownarrow \\
+\begin{bmatrix}[ccc|c]
+2 & 2 & 4 & 0 \\ 1 & 0 & 1 & 0  \\ -2 & 2 & 0 & 0  \\ 0 & -1 & -1 & 0
+\end{bmatrix}  {RREF} &\rightarrow 
+\begin{bmatrix}[ccc|c]
+1 & 0 & 1 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}\\
+\begin{bmatrix}
+x_1\\x_2\\x_3
+\end{bmatrix} &= x_3
+\begin{bmatrix}-1 \\ -1 \\ 1 \end{bmatrix} \\\\
+null (\textbf{A}) &= span \left( \begin{bmatrix}-1 \\ -1 \\ 1 \end{bmatrix} \right)\\\\
+\text{Et basis $\beta$ for }\mathcal{U}^\perp \text{ er derfor } \beta &=
+\left\{ \begin{bmatrix}-1 \\ -1 \\ 1 \end{bmatrix} \right\}
+\end{align*}
+
+\textbf{\large Opgave 2.}\\
+
+\textbf{a)}\\
+\begin{align*}
+ q_1 = \frac{v_1}{||v_1||}  &= \begin{bmatrix}1/5\\2/5\\4/5\\2/5\end{bmatrix} \\
+y = v_2 -  proj^{ \text{ }  v_2}_{v_1} = 
+\begin{bmatrix}-3\\4\\3\\4\end{bmatrix} -
+\begin{bmatrix}1\\2\\4\\2\end{bmatrix} &= 
+\begin{bmatrix}-4\\2\\-1\\2\end{bmatrix}
+\\
+q_2 = \frac{y}{||y||} &= \begin{bmatrix}-4/5\\2/5\\-1/5\\2/5\end{bmatrix}
+\end{align*}
+
+Den ortonormale basis for  $\mathcal{V}$ er således $ \mathcal{B} = 
+\left \{ \begin{bmatrix}1/5\\2/5\\4/5\\2/5\end{bmatrix}, 
+ \begin{bmatrix}-4/5\\2/5\\-1/5\\2/5\end{bmatrix}  \right \} $  
+
+\textbf{b)}\\
+
+$[w]_b = \frac{w \cdot q_1}{||q_1||^2} q_1 + ... + \frac{w \cdot q_4}{||q_4||^2} q_4 $\\
+
+Lad $x_n =  \frac{w \cdot q_n}{||q_n||^2} q_n $\\
+
+Længderne på $q_1 ... q_4$ er normaliseret dvs. 1.\\
+
+Derfor er $x_n = w \cdot q_n  $ \\
+
+Og jeg får $(x_1, x_2, x_3, x_4) = (0, 5, 5, 10)$\\
+
+Således\\
+
+ $w = 
+0 \begin{bmatrix} 1/5\\2/5\\4/5\\2/5 \end{bmatrix}+
+5 \begin{bmatrix} -4/5\\2/5\\-1/5\\2/5 \end{bmatrix}+
+5 \begin{bmatrix} 2/5\\-1/5\\-2/5\\4/5 \end{bmatrix}+
+10 \begin{bmatrix} -2/5\\-4/5\\2/5\\1/5 \end{bmatrix}$
+
+\textbf{c)}\\
+
+Da vi har med en ortonormal basis at gøre kan man bruge reglen: $Q^{-1} = Q^T$
+\[
+Q^{-1} =
+\begin{bmatrix}
+1/5 & -4/5 & 2/5 & -2/5\\
+2/5 & 2/5 &-1/5 & -4/5\\
+4/5 & -1/5 & -2/5 & 2/5 \\
+2/5 & 2/5 & 4/5 & 1/5\\
+\end{bmatrix}^T = 
+\begin{bmatrix}
+1/5 & 2/5 & 4/5 & 2/5 \\
+-4/5 & 2/5 & -1/5 & 2/5\\
+2/5 & -1/5 & -2/5 & 4/5\\
+-2/5 & -4/5 & 2/5 & 1/5
+\end{bmatrix} 
+\]
+
+\textbf{\large Opgave 4.}\\
+
+\textbf{a, b)}\\
+
+Se Main.java og Matrix.java. Jeg har tilladt mig at ændre navnet til Matrix (fra matrix), da det giver 100 gange mere mening.
+
+Eksempel på kørsel:\\
+
+GramSchmidt\\
+
+[0,666667 -0,333333 -0,533333]
+
+[0,000000 0,000000 0,600000]
+
+[0,333333 -0,666667 0,533333]
+
+[0,666667 0,666667 0,266667]\\
+
+v1...\\
+
+[2,800000]
+
+[0,600000]
+
+[3,200000]
+
+[1,600000]\\
+
+v2...\\
+
+[1,000000]
+
+[2,000000]
+
+[3,000000]
+
+[4,000000]
+
+
+}
+\end{document}
+

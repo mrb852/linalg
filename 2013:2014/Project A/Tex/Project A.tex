@@ -1,0 +1,527 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath} % flere matematikkommandoer
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+\usepackage[utf8]{inputenc} % æøå
+\usepackage[T1]{fontenc} % mere æøå
+\usepackage[danish]{babel} % orddeling
+\usepackage{verbatim} % så man kan skrive ren tekst
+\usepackage[all]{xy} % den sidste (avancerede) formel i dokumentet
+
+\begin{titlepage}
+
+\title{Projekt A}
+\author{Christian Hohlmann Enevoldsen, MRB852, Hold 2}
+\begin{document}
+\maketitle
+
+\end{titlepage}
+
+{\setlength{\parindent}{0 cm}
+
+\textbf{\large Opgave 1.}\\
+
+\textbf{a)}\\
+
+Totalmatricen: \\
+
+$
+\begin{bmatrix}[ccc|c]
+  2 & 3 & 1  &  11 \\
+  1 & 1 & 1 & 6 \\
+  5 & -1 & a &  36
+\end{bmatrix}
+$
+$r_1 - 2r_2 \rightarrow r_1$
+$
+\begin{bmatrix}[ccc|c]
+  0 & 1 & -1  &  -1 \\
+  1 & 1 & 1 & 6 \\
+  5 & -1 & a &  36
+\end{bmatrix}
+$
+$r_3 - 5r_2 \rightarrow r_3$
+$
+\begin{bmatrix}[ccc|c]
+  0 & 1 & -1  &  -1 \\
+  1 & 1 & 1 & 6 \\
+  0 & -6 & a - 5 &  6
+\end{bmatrix}
+$
+\\\\\\
+$r_3 + 6r_1 \rightarrow r_3$
+$
+\begin{bmatrix}[ccc|c]
+  0 & 1 & -1  &  -1 \\
+  1 & 1 & 1 & 6 \\
+  0 & 0 & a - 11 &  0
+\end{bmatrix}
+$
+$r_1 \leftrightarrow r_2$
+$
+\begin{bmatrix}[ccc|c]
+  
+  1 & 1 & 1 & 6 \\
+0 & 1 & -1  &  -1 \\  
+0 & 0 & a - 11 &  0
+\end{bmatrix}
+$
+\\\\
+
+Matricen er på rækkeechelonform, da alle omdrejningspunkterne (eng.: pivots) er stærkt til højre for omdrejningspunkterne i rækken ovenfor og alle elementer under omdrejningspunket i kolonerne er nuller.  Det er ikke på reduceret rækkeechelonform, fordi omdrejningspunkterne ikke er de eneste ikke nuller i deres kolonne.\\
+
+\textbf{b)}\\
+
+$
+\begin{bmatrix}[ccc|c]
+  
+1 & 1 & 1 & 6 \\
+0 & 1 & -1  &  -1 \\  
+0 & 0 & 0 &  0
+\end{bmatrix}
+$
+$r_1 - r_2 \rightarrow r_1$
+$
+\begin{bmatrix}[ccc|c]
+  1 & 0 & 2 & 7 \\
+0 & 1 & -1  &  -1 \\  
+0 & 0 & 0 &  0
+\end{bmatrix}
+$\\\\
+
+Det kan ses at $x_3$ må være en fri variable.
+
+$x_3 = t$
+
+Løsningen er således: $(x_1, x_2, x_3) = (7- 2t, t - 1, t)$\\
+
+\textbf{c)}\\
+Koefficientmatrix: 
+$
+\begin{bmatrix}
+2 & 3 & 1  \\
+1 & 1 & 1  \\  
+5 & -1 & 12
+\end{bmatrix}
+$\\\\
+
+Totalmatricen opskrives\\
+
+$
+\begin{bmatrix}[ccc|ccc]
+2 & 3 & 1 & 1 & 0 & 0 \\
+1 & 1 & 1  & 0 & 1 & 0 \\  
+5 & -1 & 12 & 0 & 0 & 1
+\end{bmatrix}
+$\\\\
+
+$r_1 \leftrightarrow r_2$ -> for at sortere\\
+
+$
+\begin{bmatrix}[ccc|ccc]
+1 & 1 & 1  & 0 & 1 & 0 \\  
+2 & 3 & 1 & 1 & 0 & 0 \\
+5 & -1 & 12 & 0 & 0 & 1
+\end{bmatrix}
+$
+$$r_2 - 2r_1 \rightarrow r_2$$
+$$r_3 - 5r_1 \rightarrow r_3$$
+$
+\begin{bmatrix}[ccc|ccc]
+1 & 1 & 1  & 0 & 1 & 0 \\  
+0 & 1 & -1 & 1 & -2 & 0 \\
+0 & -6 & 7 & 0 & -5 & 1
+\end{bmatrix}
+$
+
+$$r_2 - r_3 \rightarrow r_2$$
+$$r_1 - r_3 \rightarrow r_1$$
+$
+\begin{bmatrix}[ccc|ccc]
+1 & 1 & 0  & -6 & 18 & -1 \\  
+0 & 1 & 0 & 7 & -19 & 1 \\
+0 & 0 & 1 & 6 & -17 & 1
+\end{bmatrix}
+$\\
+
+
+$$r_1 - r_2 \rightarrow r_1$$
+$
+\begin{bmatrix}[ccc|ccc]
+1 & 0 & 0  & -13 & 37 & -2 \\  
+0 & 1 & 0 & 7 & -19 & 1 \\
+0 & 0 & 1 & 6 & -17 & 1
+\end{bmatrix}
+$\\\\
+
+\textbf{\large Opgave 2.}\\
+
+\textbf{a)}\\
+
+\textbf{$E_1$} = $
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1
+\end{bmatrix}
+$
+\textbf{$E_2$} = $
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix}
+$
+\textbf{$E_3$} = $
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0,5
+\end{bmatrix}
+$
+\textbf{$E_4$} = $
+\begin{bmatrix}
+1 & 0 & -1 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$\\
+
+\textbf{b)}\\
+
+$$\textbf{F} =  
+\begin{bmatrix}
+1 & 0 & -1 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0,5
+\end{bmatrix}
+\cdot 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1
+\end{bmatrix}
+$$
+
+$$=
+\begin{bmatrix}
+1 & 0 & -0,5\\
+0 & 1 & 0\\
+0 & 0 & 0,5
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1
+\end{bmatrix}
+=$$
+$$
+\begin{bmatrix}
+1 & -0,5 & 0 \\
+0 & 0 & 1 \\
+0 & 0,5 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-3 & 0 & 1
+\end{bmatrix} =
+\begin{bmatrix}
+1 & -0,5 & 0 \\
+-3 & 0 & 1 \\
+0 & 0,5 & 0
+\end{bmatrix}
+$$
+
+\textbf{$E_1^{-1}$} = $r_3 + 3r_1 \rightarrow r_3$ = 
+$\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1
+\end{bmatrix}$\\\\
+
+
+\textbf{$E_2^{-1}$} = $r_3 \leftrightarrow r_2 $ = 
+$\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix}$\\\\
+
+
+\textbf{$E_3^{-1}$} = $2r_3 \rightarrow r_3 $ = 
+$\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{bmatrix}$\\\\
+
+
+\textbf{$E_4^{-1}$} = $r_1 + r_3 \rightarrow r_1 $ = 
+$\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}$
+
+
+$$\textbf{G} = 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+3 & 0 & 1
+\end{bmatrix} \cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix} \cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} = 
+$$
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+3 & 1 & 0
+\end{bmatrix}\cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} = 
+$$
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 2 \\
+3 & 1 & 0
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 0 & 2\\
+3 & 1 & 3
+\end{bmatrix}
+$$\\
+
+\textbf{c)}\\
+
+$AF = I_m \leftrightarrow A = F^{-1} I_m$\\
+
+Vi finder $F^{-1}$\\
+$$
+\begin{bmatrix}[ccc|ccc]
+1  & -0,5 & 0 & 1 & 0 & 0 \\
+-3 & 0 & 1 & 0 & 1 & 0 \\
+0 & 0,5 & 0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+$$ r_3 \leftrightarrow r_2$$
+$$ r_3 + 3r_1$$
+$$r_3 + 3r_2$$
+$$2r_2 \rightarrow r_2$$
+$$r_1 + 0,5r_2$$
+$$
+\begin{bmatrix}[ccc|ccc]
+1  & 0 & 0 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 0 & 2\\
+0 & 0 & 1 & 3 & 1 & 3 
+\end{bmatrix}
+$$
+
+Det ses således at $F^{-1} = G = A$ fordi identitetsmatrixen gange  invers er lig med sig selv. \\
+
+\textbf{\large Opgave 3.}\\
+
+\textbf{a)}\\
+$$
+\textbf{N} = 
+\begin{bmatrix}
+0 & 1 & 1 & 0 & 1 \\
+0 & 0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 1 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+Det er let at se i det givet at der er 13 veje, da der i $N_{15}$ står 13.\\
+
+\textbf{b)}\\
+
+$$
+\textbf{A} = 
+\begin{bmatrix}
+0 & 0 & 1 & 1 \over 2 \\
+1 \over 3 & 0 & 0 & 0 \\
+1 \over 3 & 1 \over 2 & 0 & 1 \over 2 \\
+1 \over 3 & 1 \over 2 & 0 & 0 
+\end{bmatrix}
+$$
+
+
+\textbf{c)}\\
+
+For at finde $x$  sættes ligningssystemet op i en totalmatrix
+
+$$
+\begin{bmatrix}[cccc|c]
+0 & 0 & 1 & 1 \over 2 & x_1\\
+1 \over 3 & 0 & 0 & 0 & x_2 \\
+1 \over 3 & 1 \over 2 & 0 & 1 \over 2 & x_3 \\
+1 \over 3 & 1 \over 2 & 0 & 0 & x_4
+\end{bmatrix}
+$$
+
+Det kan omskrives til totalmatricen $Ax -x = 0$
+$$
+\begin{bmatrix}[cccc|c]
+-1 & 0 & 1 & 1 \over 2 & 0\\
+1 \over 3 & -1 & 0 & 0 & 0 \\
+1 \over 3 & 1 \over 2 & -1 & 1 \over 2 & 0 \\
+1 \over 3 & 1 \over 2 & 0 & -1 & 0
+\end{bmatrix}
+$$
+
+System løses med rækkeoperationer og vi får:
+
+$$
+\begin{bmatrix}
+x_1 \\
+x_2\\
+x_3\\
+x_4
+\end{bmatrix}
+=
+\begin{bmatrix}
+2t \\
+{2 \over 3} t\\
+{3 \over 2} t\\
+t
+\end{bmatrix}$$
+
+rangordningen må således være: $x_1, x_3, x_4, x_2$ hvor $x_1$ er vigtigst.\\
+
+\textbf{\large Opgave 4.}\\
+
+\textbf{a)}\\
+
+Opgave4a.java løser opgaven.
+
+Ved at lave et en løkke der kører fra 1 til og med 3 inde i en ækvivalent løkke er det let
+at gennemløbe koordinaterne i matrix A. Det væsentlige er variablen c, som bliver klargjort i 
+første løkke og gennemløbende bliver forøget med 1 i hver iteration i den indlejrede løkke.\\
+
+Samme teknik bruges til at lave matrix B. Her starter vi dog med at initialisere variablen d med 9
+og derefter formindskes d med 1 i den indlejrede løkke. Dog vil den ved uligetegn tildele d værdien 
+$-d + 1$ så den forøges i stedet. Dette er ikke en fejl, da vi så skifter fortegn inden d bruges.
+
+For at ændre eller tildele værdier i matrix bruges funktionen\\ set$(int$ $m$, $int $ $n$$)$\\
+
+Add metoden bruges med en instans. f.eks. A.add(matrix:B), og returnerer en ny matrix. Derfor er det vigtigt at man ikke regner med at A ændres.\\
+
+
+matrix.mul(matrix:B) implementerede jeg ved at bruge B.transpose()  så jeg udelukkende kunne 
+arbejde med søjler eller rækker uden forvirring. Dernæst har jeg via 3 for løkker formået at multiplicere B's søjler med A's rækker, samtidig med jeg bruger jeg indekset for det element som bliver brugt i det øjeblik til at bestemme indekset for summen af regnestykket.
+
+Opgave4c.java viser hvordan man bruger mul(matrix:B).\\
+
+\textbf{Eksempel på kørsel af Opgave4ajava}\\
+
+Printer Matrix A.
+
+[1,000000 2,000000 3,000000]
+
+[4,000000 5,000000 6,000000]
+
+[7,000000 8,000000 9,000000]\\
+
+Printer Matrix B.
+
+[-9,000000 8,000000 -7,000000]
+
+[6,000000 -5,000000 4,000000]
+
+[-3,000000 2,000000 -1,000000]\\
+
+Ændrer $a_{12} $ til 4\\
+
+Printer$ A_{12}.$\\
+
+$A_{12}$: 4,000000\\
+
+Prøver at sætte $A_{44}$ = 5. Fejl printes\\
+
+Elements outside the matrix cannot be assigned values\\
+
+Printer A + B
+
+[-8,000000 12,000000 -4,000000]
+
+[10,000000 0,000000 10,000000]
+
+[4,000000 10,000000 8,000000]\\
+
+\textbf{Eksempel på kørsel af Opgave4c.java}\\
+
+Udskriver AB
+
+[-6,000000 4,000000 -2,000000]
+
+[-24,000000 19,000000 -14,000000]
+
+[-42,000000 34,000000 -26,000000]\\
+
+Udskriver BA
+
+[-26,000000 -34,000000 -42,000000]
+
+[14,000000 19,000000 24,000000]
+
+[-2,000000 -4,000000 -6,000000]
+
+
+}
+\end{document}
+
